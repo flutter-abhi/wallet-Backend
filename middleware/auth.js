@@ -16,8 +16,14 @@ exports.auth = (req, res, next) => {
             })
         }
 
-        const payload = jwt.verify(token, process.env.JWT_SECREATE_KEY)
-        req.user = payload;
+        try {
+            const payload = jwt.verify(token, process.env.JWT_SECREATE_KEY)
+            req.user = payload;
+        } catch (error) {
+            return res.status(401).json({
+                message: "token expire logine agai"
+            })
+        }
 
 
         next();

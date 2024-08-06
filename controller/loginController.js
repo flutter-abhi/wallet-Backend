@@ -7,6 +7,7 @@ require("dotenv").config();
 
 
 exports.login = async (req, res) => {
+    console.log(req.body);
     try {
         const { contact, password } = req.body;
 

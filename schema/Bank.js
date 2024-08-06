@@ -7,21 +7,22 @@ const BankSchema = new mongoose.Schema({
         ref: "User",
         require: true
     },
-    card: {
+    cardName: {
         type: String,
         require: true
     }
     ,
     acNumber: {
-        type: String,
+        type:Number,
         require: true
     },
     acBalance: {
-        type: String,
-    },
-    ifcCode: {
-        type: String,
+        type: Number,
         require: true
+    },
+
+    valid: {
+        type: String
     }
 })
 

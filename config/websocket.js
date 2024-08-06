@@ -6,7 +6,7 @@ function initWebSocket(server) {
     wss = new WebSocket.Server({ server });
     wss.on('connection', (ws) => {
         console.log('Client connected to WebSocket');
-        
+
         ws.on('close', () => {
             console.log('Client disconnected');
         });

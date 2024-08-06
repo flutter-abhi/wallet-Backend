@@ -40,12 +40,7 @@ const UserSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    banks: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Bank"
-        }
-    ],
+
 });
 
 // Export the User model

@@ -28,7 +28,7 @@ cloudinary.cloudinaryConnection(); // Connect to Cloudinary
 // Start HTTP server and WebSocket server
 const port = process.env.PORT || 3400;
 
-server.listen(port, () => {
+server.listen(port, '0.0.0.0', () => {
     console.log(`app started at port ${port}`);
 });
 
