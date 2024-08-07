@@ -79,7 +79,7 @@ exports.verifyOtp = async (req, res) => {
         // Find the most recent OTP entry for the given contact
         const dbOtp = await OTP.find({ contact }).sort({ createdAt: -1 }).limit(1);
 
-        console.log(dbOtp)
+        
 
         // Check if OTP was found and compare it with the provided OTP
         if (dbOtp.length > 0 && dbOtp[0].otp === otp) {

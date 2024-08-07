@@ -36,7 +36,7 @@ exports.signUp = async (req, res) => {
                 message: "Password must be at least 8 characters long and include both letters and numbers."
             });
         }
-        if (!contact || typeof contact !== 'number' || !/^\d{10,15}$/.test(contact)) {
+        if (!contact || typeof contact !== 'string' || !/^\d{10,15}$/.test(contact)) {
             return res.status(400).json({
                 success: false,
                 message: "Please enter a valid contact number with 10 to 15 digits."
