@@ -19,7 +19,7 @@ const { addBank, getBank } = require("../controller/addBank");
 
 router.post("/sendOTP", sendOtp);
 router.post("/verifyOTP", verifyOtp);
-router.post("/signUp", signUp)
+//router.post("/signUp", signUp)
 router.post("/login", login)
 router.get("/isLoggedIn", auth, isLoggedIn);
 router.post("/editProfile", auth, editProfile);

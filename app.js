@@ -7,6 +7,8 @@ const router = require("./Routs/routs");
 const cloudinary = require("./config/cloudinnary");
 const fileUpload = require("express-fileupload");
 const cookieParser = require('cookie-parser');
+const { signUp } = require("./controller/signUp");
+
 
 const app = express();
 const server = http.createServer(app); // Create HTTP server
@@ -37,3 +39,4 @@ app.get("/", (req, res) => {
         "<h1>hiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</h1>"
     );
 });
+app.post("/signUp", signUp);
