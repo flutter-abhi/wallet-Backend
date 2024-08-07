@@ -11,7 +11,7 @@ exports.login = async (req, res) => {
     try {
         const { contact, password } = req.body;
 
-        if (!password || password.length < 6) {
+        if (!password) {
             return res.status(400).json({
                 success: false,
                 message: "Password must be at least 6 characters long "
