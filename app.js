@@ -17,7 +17,7 @@ const server = http.createServer(app); // Create HTTP server
 initWebSocket(server);
 
 app.use(express.json());
-app.use("/wallet", router);
+//app.use("/wallet", router);
 app.use(fileUpload({
     useTempFiles: true,
     tempFileDir: '/tmp/'
