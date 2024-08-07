@@ -11,13 +11,13 @@ exports.login = async (req, res) => {
     try {
         const { contact, password } = req.body;
 
-        if (!password || typeof password !== 'string' || password.length < 6) {
+        if (!password || password.length < 6) {
             return res.status(400).json({
                 success: false,
                 message: "Password must be at least 6 characters long "
             });
         }
-        if (!contact || typeof contact !== 'string') {
+        if (!contact) {
             return res.status(400).json({
                 success: false,
                 message: "Please enter a valid contact number with 10 to 15 digits."
