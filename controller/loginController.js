@@ -10,7 +10,8 @@ exports.login = async (req, res) => {
 
     try {
         const { contact, password } = req.body;
-
+        console.log(contact, password);
+        
         if (!password) {
             return res.status(400).json({
                 success: false,
