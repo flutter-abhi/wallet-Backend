@@ -17,7 +17,7 @@ exports.login = async (req, res) => {
                 message: "Password must be at least 6 characters long "
             });
         }
-        if (!contact || typeof contact !== 'string' || !/^\d{10,15}$/.test(contact)) {
+        if (!contact || typeof contact !== 'string') {
             return res.status(400).json({
                 success: false,
                 message: "Please enter a valid contact number with 10 to 15 digits."
