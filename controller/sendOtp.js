@@ -10,7 +10,7 @@ exports.sendOtp = async (req, res) => {
         const { contact } = req.body;
 
         // Check if contact is provided and is a number with 12 digits
-        if (!contact || typeof contact !== 'number' || contact.toString().length !== 12) {
+        if (!contact) {
             return res.status(400).json({
                 success: false,
                 message: "Please enter a valid contact number with 12 digits."
