@@ -7,7 +7,14 @@ exports.transactionHistory = async (req, res) => {
 
         let history = await Transaction.find({
             $or: [{ sender: userId }, { receiver: userId }]
-        }).sort({ date: -1 }).populate("sender").populate("receiver");
+        }).sort({ date: -1 }).populate({
+            path: 'sender',
+            select: '-password -walletBalance'
+        })
+            .populate({
+                path: 'receiver',
+                select: '-password -walletBalance'
+            });;
 
         // Iterate over each transaction to update the isCreadited field
         history = history.map(transaction => {
