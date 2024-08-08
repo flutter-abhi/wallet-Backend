@@ -17,13 +17,12 @@ exports.transactionHistory = async (req, res) => {
             });;
 
         // Iterate over each transaction to update the isCreadited field
-        history = history.map(transaction => {
-            if (transaction.sender.toString() === userId.toString()) {
+        history.forEach(transaction => {
+            if (transaction.sender._id.toString() === userId.toString()) {
                 transaction.isCreadited = false;
-            } else if (transaction.receiver.toString() === userId.toString()) {
+            } else if (transaction.receiver._id.toString() === userId.toString()) {
                 transaction.isCreadited = true;
             }
-            return transaction;
         });
 
         // Send the updated transaction history via HTTP response
