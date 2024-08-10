@@ -5,7 +5,9 @@ exports.getAllContact = async (req, res) => {
 
     try {
 
-        const users = await User.find({ type: "user" });
+        const users = await User.find({ type: "user" }).populate({
+            select: '-password -walletBalance'
+        });
         res.status(200).json({
             succsees: true,
             data: users

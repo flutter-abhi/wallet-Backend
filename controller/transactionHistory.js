@@ -14,7 +14,7 @@ exports.transactionHistory = async (req, res) => {
             .populate({
                 path: 'receiver',
                 select: '-password -walletBalance'
-            });;
+            });
 
         // Iterate over each transaction to update the isCreadited field
         history.forEach(transaction => {

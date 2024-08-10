@@ -82,8 +82,8 @@ exports.signUp = async (req, res) => {
             lastName,
             email,
             contact,
-            password: hashPass
-            , type
+            password: hashPass,
+             type
         })
 
         ///
