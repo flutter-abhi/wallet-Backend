@@ -37,7 +37,7 @@ exports.transferTo = async (req, res) => {
             sender: senderUser._id,
             receiver: receiverUser._id,
             amount: amount,
-        });
+        }).populate("sender").populate("receiver");
 
         await transaction.save();
 
