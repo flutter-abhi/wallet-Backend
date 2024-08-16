@@ -40,6 +40,7 @@ exports.transferTo = async (req, res) => {
         });
 
         await transaction.save();
+        transaction = await transaction.populate('sender receiver').execPopulate();
 
         // Respond with a success message
         res.status(200).json({ message: 'Transfer successful', transaction });
