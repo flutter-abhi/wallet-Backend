@@ -37,13 +37,10 @@ exports.transferTo = async (req, res) => {
             sender: senderUser._id,
             receiver: receiverUser._id,
             amount: amount,
-        })
+        });
 
         await transaction.save();
-        transaction = await transaction.populate([
-            { path: 'sender', select: 'name email' },
-            { path: 'receiver', select: 'name email' }
-        ]);
+
         // Respond with a success message
         res.status(200).json({ message: 'Transfer successful', transaction });
 
